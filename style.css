@@ -1,0 +1,218 @@
+
+:root{
+    --clr-primary-400: hsl(215, 51%, 70%);
+    --clr-primary-300: hsl(178, 100%, 50%); 
+
+    --clr-neutral-900: hsl(217, 54%, 11%); 
+    --clr-neutral-800: hsl(216, 50%, 16%); 
+    --clr-neutral-700: hsl(215, 32%, 27%); 
+    --clr-neutral-100: hsl(0, 0%, 100%); 
+
+    --ff-main: 'Outfit', sans-serif; 
+
+    --fw-light: 300; 
+    --fw-regular: 400; 
+    --fw-bold: 700; 
+
+}
+
+/*
+    1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+    . Remove default margin
+*/
+* {
+    margin: 0;
+}
+
+/*
+    3. Allow percentage-based heights in the application
+*/
+html,
+body {
+    height: 100%;
+}
+
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+*/
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*
+    6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+    7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/*
+    8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+
+body{
+    display: grid;
+    place-content: center;
+    background-color: var(--clr-neutral-900);
+    font-family: var(--ff-main);
+    font-weight: var(--fw-regular);
+    font-size: 1.125rem;
+    color: var(--clr-neutral-100);
+
+}
+
+.nft__card{
+    background-color: var(--clr-neutral-800);
+    padding: 1.75rem;
+    margin: 2rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    display: grid;
+    gap: 1rem;
+    max-width: 375px;
+}
+
+.nft__img{
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-bottom: 0.8rem;
+}
+
+
+
+/* Utility */
+
+.flex-group{
+    display: flex; 
+    justify-content: space-between;
+}
+
+/* Nft Content*/
+
+hr.solid{
+
+    border-color: var(--clr-primary-400);
+    border-width: 0.01rem;
+    opacity: 30%;
+}
+
+.nft__description{
+    color: var(--clr-primary-400);
+    font-weight: var(--fw-light);
+    line-height: 1.75rem;
+}
+
+.price_tag{
+    color: var(--clr-primary-300);
+    font-weight: var(--fw-bold);
+}
+
+.price_tag[data-icon = "eth-icon"]::before{
+    content: "";
+    display: inline-flex;
+    padding: 0.1rem 0.6rem;
+    background-image: url(images/icon-ethereum.svg);
+    background-repeat: no-repeat;
+    width: 11px;
+    height: 18px;
+}
+
+.time_left{
+    color: var(--clr-primary-400);
+
+}
+
+.time_left[data-icon = 'time-icon']::before{
+    content: ''; 
+    display: inline-flex;
+    padding: 0.1rem 0.8rem;
+    align-self: center;
+    background-image: url(images/icon-clock.svg);
+    background-repeat: no-repeat;
+    width: 17px;
+    height: 17px; 
+}
+
+.flex-profile {
+    display: flex;
+    gap: 1rem;
+    justify-content: left;
+}
+
+.nft__author{
+    color: var(--clr-primary-400);
+}
+
+.nft__author[data-icon = 'profile-icon']::before{
+    content:'';
+    display: inline-flex;
+    padding: 0.4rem .8rem;
+    margin-right: 1rem;
+    align-content: center;
+    background-image: url(images/image-avatar.png);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    width: 35px;
+    height: 35px;
+    border-color: blueviolet;
+    border-width: 1rem;
+    
+}
+
+.nft__img:is(:hover, :active){
+    background: var(--clr-primary-300);
+    cursor: pointer;
+}
+
+.nft__author a{
+    color: var(--clr-neutral-100);
+    text-decoration: none;
+}
+
+
+.nft__title:is(:hover, :active){
+    color: var(--clr-primary-300);
+    cursor: pointer;
+}
+
+
+.nft__author a:is(:hover, :active){
+    color: var(--clr-primary-300);
+}
+
